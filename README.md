@@ -7,13 +7,13 @@ Eine Kanban-basierte Aufgabenverwaltungs-App, entwickelt mit reinem HTML, CSS un
 
 ## Live Demo
 
-[https://mehmet-deliaci.net/join/](#) <!-- Hier die URL eintragen -->
+[https://mehmet-deliaci.net/join/](https://mehmet-deliaci.net/join/)
 
 ---
 
 ## Screenshots
 
-> *(Screenshots vom Login, Board und der Kontaktseite hier einfügen)*
+> (https://mehmet-deliaci.net/join/assets/screenshots/join.jpeg)
 
 ---
 
