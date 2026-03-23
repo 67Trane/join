@@ -1,35 +1,25 @@
-function includeHTML() {
-    return new Promise((resolve, reject) => {
-        var z, i, elmnt, file, xhttp;
-        /* Loop through a collection of all HTML elements: */
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /* Search for elements with a certain attribute: */
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-                /* Make an HTTP request using the attribute value as the file name: */
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4) {
-                        if (this.status == 200) {
-                            elmnt.innerHTML = this.responseText;
-                        }
-                        if (this.status == 404) {
-                            elmnt.innerHTML = "Page not found.";
-                        }
-                        /* Remove the attribute, and call this function once more: */
-                        elmnt.removeAttribute("w3-include-html");
-                        includeHTML().then(resolve);  // Resolve the promise when done
-                    }
-                }
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                /* Exit the function: */
-                return;
-            }
-        }
-        resolve(); // Resolve the promise if no elements are left 
-    });
-  }
+/**
+ * Includes all fragments referenced through the `w3-include-html` attribute.
+ *
+ * @returns {Promise<void>} Resolves after all referenced fragments were inserted.
+ */
+async function includeHTML() {
+  const includeTargets = Array.from(document.querySelectorAll("[w3-include-html]"));
 
+  for (const element of includeTargets) {
+    const file = element.getAttribute("w3-include-html");
+
+    if (!file) {
+      continue;
+    }
+
+    try {
+      const response = await fetch(file);
+      element.innerHTML = response.ok ? await response.text() : "Page not found.";
+    } catch (error) {
+      element.innerHTML = "Page not found.";
+    }
+
+    element.removeAttribute("w3-include-html");
+  }
+}

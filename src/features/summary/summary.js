@@ -17,6 +17,35 @@ async function loadSummary() {
   setAwaitFeedback();
   setTaskInBoard();
   getGreeting();
+  await setUpcomingDeadline();
+}
+
+/**
+ * Fetches tasks and displays the nearest upcoming deadline among urgent tasks.
+ * @async
+ */
+async function setUpcomingDeadline() {
+  const response = await fetch("https://join-318-default-rtdb.europe-west1.firebasedatabase.app/addTask.json");
+  const data = await response.json();
+  if (!data) return;
+
+  const urgentDates = Object.values(data)
+    .filter(t => t.prio === "urgent" && t.status !== "done" && t.date)
+    .map(t => new Date(t.date))
+    .filter(d => !isNaN(d));
+
+  const el = document.getElementById("upcoming-deadline");
+  if (!urgentDates.length) {
+    el.innerHTML = "No upcoming deadline";
+    return;
+  }
+
+  urgentDates.sort((a, b) => a - b);
+  el.innerHTML = urgentDates[0].toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 /**

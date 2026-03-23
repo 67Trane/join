@@ -322,7 +322,7 @@ function checkStatus() {
  * @returns {boolean} - True if the current page is "addtask-card.html".
  */
 function checkWindowLocation() {
-  if (window.location.href.endsWith("documents/addtask-card.html")) {
+  if (window.location.href.includes("add-task-modal.html")) {
     return true;
   } else {
     return false;

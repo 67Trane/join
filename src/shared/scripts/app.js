@@ -7,31 +7,20 @@ let togglePopUp = false;
 
 /**
  * Initializes the page by including HTML components and loading user-related data.
- * This function includes HTML components, then loads the account name, adjusts navigation links,
+ * This function includes HTML components, then adjusts navigation links,
  * changes the navbar color, and loads the user's name.
  * 
  * @async
  * @throws {Error} Throws an error if including HTML components fails.
  */
-function init() {
-    includeHTML().then(() => {
+async function init() {
+  try {
+    await includeHTML();
     noMemberLink();
     changeNavbarColor();
     loadUserName();
-  }).catch((error) => {
+  } catch (error) {
     console.error("Error including HTML:", error);
-  });
-}
-
-/**
- * Loads and displays the current user's name in the greeting element.
- * If `currentName` is defined, it updates the inner HTML of the element with the ID 'greet-name' 
- * to show the user's name.
- */
-function loadAccountName() {
-  greetId = document.getElementById('greet-name');
-  if (currentName && greetId) {
-    greetId.innerHTML = `${currentName}`;
   }
 }
 
@@ -41,9 +30,12 @@ function loadAccountName() {
  * and 'help-account-box' to hide them.
  */
 function noMemberLink() {
-  if (notAMember) {
-    document.getElementById('navbar-links').classList.add('d-none');
-    document.getElementById('help-account-box').classList.add('d-none');
+  const navbarLinks = document.getElementById('navbar-links');
+  const helpAccountBox = document.getElementById('help-account-box');
+
+  if (notAMember && navbarLinks && helpAccountBox) {
+    navbarLinks.classList.add('d-none');
+    helpAccountBox.classList.add('d-none');
   }
 }
 
@@ -52,8 +44,10 @@ function noMemberLink() {
  * If `icon` is defined, it adds the 'background-color' class to the element with the ID `icon`.
  */
 function changeNavbarColor() {
-  if (icon) {
-    document.getElementById(`${icon}`).classList.add('background-color');
+  const activeNavItem = icon ? document.getElementById(`${icon}`) : null;
+
+  if (activeNavItem) {
+    activeNavItem.classList.add('background-color');
   }
 }
 
