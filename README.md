@@ -2,7 +2,6 @@
 
 Eine Kanban-basierte Aufgabenverwaltungs-App, entwickelt mit reinem HTML, CSS und JavaScript – ohne Frameworks oder Build-Tools – und Firebase Realtime Database als Backend.
 
-> Entwickelt im Rahmen des Developer Akademie Curriculums als Teil meines Web-Development-Portfolios.
 
 ---
 
