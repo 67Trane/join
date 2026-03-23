@@ -1,4 +1,4 @@
-.overlay {
+﻿.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -155,15 +155,15 @@ form {
 }
 
 .name-input {
-  background-image: url(/assets/img/person.svg);
+  background-image: url(/join/assets/img/person.svg);
 }
 
 .email-input {
-  background-image: url(/assets/img/mail.svg);
+  background-image: url(/join/assets/img/mail.svg);
 }
 
 .password-input {
-  background-image: url(/assets/img/lock.svg);
+  background-image: url(/join/assets/img/lock.svg);
 }
 
 .password-eye-open:hover{

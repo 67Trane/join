@@ -1,4 +1,4 @@
-function renderAssignedTo(contact, i, firstinits, secondinits, color) {
+﻿function renderAssignedTo(contact, i, firstinits, secondinits, color) {
     return `
       <div class="contact" id="contact${i}" onclick="assignedToChecked(${i}, false)">
         <div class="flex" id="id=${i}">
@@ -27,23 +27,23 @@ function renderAssignedTo(contact, i, firstinits, secondinits, color) {
     <div class="task" id="id-${id}">
       <li id="subtask${id}">${input}</li>
       <div class="edit-delete" id="edit-delete${id}">
-        <img src="/assets/img/edit.svg" alt="" onclick="editSubtask(${id})" />
+        <img src="/join/assets/img/edit.svg" alt="" onclick="editSubtask(${id})" />
         <div class="separator"></div>
-        <img src="/assets/img/delete.svg" alt="" onclick="deleteSubtask(${id})" />
+        <img src="/join/assets/img/delete.svg" alt="" onclick="deleteSubtask(${id})" />
       </div>
     </div>`;
   }
   
   function renderEditOptions(id) {
-    return `<img src="/assets/img/delete.svg" alt="" onclick="deleteSubtask(${id})">
-      <img src="/assets/img/Vector 3.svg" alt="">
-      <img src="/assets/img/check.svg" alt="" style="filter: invert();" onclick="edited(${id})">`;
+    return `<img src="/join/assets/img/delete.svg" alt="" onclick="deleteSubtask(${id})">
+      <img src="/join/assets/img/Vector 3.svg" alt="">
+      <img src="/join/assets/img/check.svg" alt="" style="filter: invert();" onclick="edited(${id})">`;
   }
   
   function renderEditDoneImages(id) {
-    return `<img src="/assets/img/edit.svg" alt="" onclick="editSubtask(${id})">
-            <img src="/assets/img/Vector 3.svg" alt="">
-            <img src="/assets/img/delete.svg" alt="" onclick="deleteSubtask(${id})">`;
+    return `<img src="/join/assets/img/edit.svg" alt="" onclick="editSubtask(${id})">
+            <img src="/join/assets/img/Vector 3.svg" alt="">
+            <img src="/join/assets/img/delete.svg" alt="" onclick="deleteSubtask(${id})">`;
   }
   
   function renderInputfieldEdit(id, task) {

@@ -1,4 +1,4 @@
-let currentUserURL = "https://join-318-default-rtdb.europe-west1.firebasedatabase.app/curent-user.json"
+﻿let currentUserURL = "https://join-318-default-rtdb.europe-west1.firebasedatabase.app/curent-user.json"
 const params = new URLSearchParams(window.location.search);
 let currentName = '';
 const icon = params.get('icon');
@@ -62,10 +62,10 @@ function renderPopUp() {
   if (togglePopUp) {
     popUpBox.innerHTML = `
     <div id="headline-pop-up" class="headline-pop-up"> 
-      <a class="pop-up-help" href="/src/features/help/help.html">Help</a>
-      <a href="/src/features/legal/legal.html">Legal Notice</a>
-      <a href="/src/features/privacy/privacy.html">Privacy Policy</a>
-      <a href="/index.html">Log out</a>
+      <a class="pop-up-help" href="/join/src/features/help/help.html">Help</a>
+      <a href="/join/src/features/legal/legal.html">Legal Notice</a>
+      <a href="/join/src/features/privacy/privacy.html">Privacy Policy</a>
+      <a href="/join/index.html">Log out</a>
     </div>`;
     setTimeout(() => {
       document.getElementById('headline-pop-up').className += ' active';
@@ -90,7 +90,7 @@ function moveToLastPage() {
  * Redirects the user to the help page.
  */
 function openHelpPage() {
-  window.location.href = "/src/features/help/help.html";
+  window.location.href = "/join/src/features/help/help.html";
 }
 
 /**
@@ -101,9 +101,9 @@ function openHelpPage() {
 function sendToPrivacyPolicyFromNavbar() {
   if (notAMember) {
     let noMember = true;
-    window.location.href = `/src/features/privacy/privacy.html?userId=${noMember}&icon=privacy`;
+    window.location.href = `/join/src/features/privacy/privacy.html?userId=${noMember}&icon=privacy`;
   } else {
-    window.location.href = "/src/features/privacy/privacy.html?icon=privacy";
+    window.location.href = "/join/src/features/privacy/privacy.html?icon=privacy";
   }
 }
 
@@ -115,9 +115,9 @@ function sendToPrivacyPolicyFromNavbar() {
 function sendTolegalNoticeFromNavbar() {
   if (notAMember) {
     let noMember = true;
-    window.location.href = `/src/features/legal/legal.html?userId=${noMember}&icon=legal`;
+    window.location.href = `/join/src/features/legal/legal.html?userId=${noMember}&icon=legal`;
   } else {
-    window.location.href = "/src/features/legal/legal.html?icon=legal";
+    window.location.href = "/join/src/features/legal/legal.html?icon=legal";
   }
 }
 

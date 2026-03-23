@@ -1,20 +1,20 @@
-const BASE_URL = "https://join-318-default-rtdb.europe-west1.firebasedatabase.app/";
+﻿const BASE_URL = "https://join-318-default-rtdb.europe-west1.firebasedatabase.app/";
 
 const PRIORITY_CONFIG = {
   urgent: {
     buttonColor: "rgb(255, 61, 0)",
-    activeIcon: "/assets/img/urgent white.svg",
-    defaultIcon: "/assets/img/urgent.svg",
+    activeIcon: "/join/assets/img/urgent white.svg",
+    defaultIcon: "/join/assets/img/urgent.svg",
   },
   medium: {
     buttonColor: "rgb(255, 168, 0)",
-    activeIcon: "/assets/img/Capa 2 white.svg",
-    defaultIcon: "/assets/img/Capa 2.svg",
+    activeIcon: "/join/assets/img/Capa 2 white.svg",
+    defaultIcon: "/join/assets/img/Capa 2.svg",
   },
   low: {
     buttonColor: "rgb(122, 226, 41)",
-    activeIcon: "/assets/img/low white.svg",
-    defaultIcon: "/assets/img/low.svg",
+    activeIcon: "/join/assets/img/low white.svg",
+    defaultIcon: "/join/assets/img/low.svg",
   },
 };
 

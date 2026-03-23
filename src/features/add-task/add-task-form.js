@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Retrieves the task description from the input field.
  */
 function getDescription() {
@@ -92,9 +92,9 @@ function setPrioDefault(urgent, medium, low, urgentimg, mediumimg, lowimg) {
   urgent.style.backgroundColor = "white";
   medium.style.backgroundColor = "white";
   low.style.backgroundColor = "white";
-  urgentimg.src = "/assets/img/urgent.svg";
-  mediumimg.src = "/assets/img/Capa 2.svg";
-  lowimg.src = "/assets/img/low.svg";
+  urgentimg.src = "/join/assets/img/urgent.svg";
+  mediumimg.src = "/join/assets/img/Capa 2.svg";
+  lowimg.src = "/join/assets/img/low.svg";
   urgent.style.color = "black";
   medium.style.color = "black";
   low.style.color = "black";
@@ -117,17 +117,17 @@ function selectedPrio(prio) {
   if (prio == "urgent") {
     urgent.style.backgroundColor = "rgb(255, 61, 0)";
     urgent.style.color = "white";
-    urgentimg.src = "/assets/img/urgent white.svg";
+    urgentimg.src = "/join/assets/img/urgent white.svg";
     tasks.prio = "urgent";
   } else if (prio == "medium") {
     medium.style.backgroundColor = "rgb(255, 168, 0)";
     medium.style.color = "white";
-    mediumimg.src = "/assets/img/Capa 2 white.svg";
+    mediumimg.src = "/join/assets/img/Capa 2 white.svg";
     tasks.prio = "medium";
   } else if (prio == "low") {
     low.style.backgroundColor = "rgb(122, 226, 41)";
     low.style.color = "white";
-    lowimg.src = "/assets/img/low white.svg";
+    lowimg.src = "/join/assets/img/low white.svg";
     tasks.prio = "low";
   }
 }

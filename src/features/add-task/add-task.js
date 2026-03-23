@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Global task object to store task information.
  * @type {Object}
  */
@@ -348,7 +348,7 @@ function getAllInfos() {
     } else {
       successDisplay();
       setTimeout(() => {
-        window.location = "/src/features/board/board.html";
+        window.location = "/join/src/features/board/board.html";
       }, 2000);
     }
   }

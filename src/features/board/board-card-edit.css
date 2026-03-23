@@ -1,4 +1,4 @@
-body {
+﻿body {
   background-color: rgb(246, 247, 248);
 }
 
@@ -706,7 +706,7 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 
   .clear-btn:hover img {
-    content: url("/assets/img/Close_blue.svg");
+    content: url("/join/assets/img/Close_blue.svg");
   }
 }
 

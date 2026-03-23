@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Base URL for the Firebase Realtime Database.
  * @constant {string}
  */
@@ -296,7 +296,7 @@ function searchCard() {
  */
 function openMenu(id, event) {
   let dots = document.getElementById(`dots-${id}`);
-  dots.src = "/assets/img/3drots-blue.svg";
+  dots.src = "/join/assets/img/3drots-blue.svg";
   event.stopPropagation();
   let dropdowns = document.getElementsByClassName("dropdown-content");
   for (let i = 0; i < dropdowns.length; i++) {

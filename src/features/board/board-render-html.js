@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Renders a task card.
  * @param {Array<Object>} task - Array of tasks in the section.
  * @param {number} subtasklength - Number of subtasks.
@@ -17,7 +17,7 @@ function renderToDos(task, subtasklength, i, categoryColor, prio, checked) {
                       <p>${task[i].category}</p>
                   </div>
                   <div class="dropdown">
-                       <img src="/assets/img/3dots.svg" alt="" id="dots-${task[i].id}" class="dots" onclick="openMenu('${task[i].id}', event)">
+                       <img src="/join/assets/img/3dots.svg" alt="" id="dots-${task[i].id}" class="dots" onclick="openMenu('${task[i].id}', event)">
                     <div id="myDropdown-${task[i].id}" class="dropdown-content">
                       <a onclick="stopEventPropagation(event); changeSections('todo','${task[i].id}');">To do</a>
                       <a onclick="stopEventPropagation(event); changeSections('inprogress', '${task[i].id}');">In progress</a>
@@ -41,7 +41,7 @@ function renderToDos(task, subtasklength, i, categoryColor, prio, checked) {
               <div class="contacts-section" id="contacts-section${task[i].id}">
                   <div class="contacts" id="contact-images${task[i].id}"></div>
                   <p class="d-none" id="over-amount${task[i].id}"> test </p>
-                  <img src="/assets/img/${prio}" alt="" />
+                  <img src="/join/assets/img/${prio}" alt="" />
               </div>
         </div>`;
 }
@@ -67,12 +67,12 @@ function renderContactsImages(inits, allcolors, j) {
 function renderBoardCardButtons(id) {
   return `<div class="delete-edit">
                   <div class="delete" id="delete-btn-${id}" onclick="deleteTask('${id}'), parent.closeWindow('card-infos')">
-                      <img src="/assets/img/delete.svg" alt="">
+                      <img src="/join/assets/img/delete.svg" alt="">
                       <p>Delete</p>
                   </div>
-                  <img src="/assets/img/Vector 3.svg" alt="">
+                  <img src="/join/assets/img/Vector 3.svg" alt="">
                   <div class="edit" id="edit-btn-${id}" onclick="parent.editTask('${id}')">
-                      <img src="/assets/img/edit.svg" alt="">
+                      <img src="/join/assets/img/edit.svg" alt="">
                       <p>Edit</p>
                   </div>
               </div>`;

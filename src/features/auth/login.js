@@ -1,4 +1,4 @@
-
+﻿
 let BASE_URL = "https://join-318-default-rtdb.europe-west1.firebasedatabase.app/accounts.json" 
 let contacsFatch = 'https://join-318-default-rtdb.europe-west1.firebasedatabase.app/';
 
@@ -78,7 +78,7 @@ async function checkUserData(accounts) {
     let currentAccountName = user.name;
     let currentEmail = user.email;
     await postCurrentUser(currentAccountName, currentEmail);
-    window.location.href = `/src/features/summary/summary.html?name=${encodeURIComponent(currentAccountName)}`;
+    window.location.href = `/join/src/features/summary/summary.html?name=${encodeURIComponent(currentAccountName)}`;
   } else {
     document.getElementById('user-email').classList.add('border-color-red');
     document.getElementById('user-password').classList.add('border-color-red');
@@ -111,7 +111,7 @@ function changePasswordIcon(inputID, spanID) {
     iconBox.classList.add('d-none');
   }
   iconBox.innerHTML = `
-    <img onclick="changeInputType('${inputID}', '${spanID}')" src="/assets/img/visibility_off.svg" alt="open-eye">`;
+    <img onclick="changeInputType('${inputID}', '${spanID}')" src="/join/assets/img/visibility_off.svg" alt="open-eye">`;
 }
 
 /**
@@ -125,11 +125,11 @@ function changeInputType(inputID, spanID) {
   if (currentPasswordInput.type === 'password') {
     currentPasswordInput.type = 'text';
     iconBox.innerHTML = `
-    <img onclick="changeInputType('${inputID}', '${spanID}')" src="/assets/img/visibility.svg" alt="close-eye">`;
+    <img onclick="changeInputType('${inputID}', '${spanID}')" src="/join/assets/img/visibility.svg" alt="close-eye">`;
   } else {
     currentPasswordInput.type = 'password';
     iconBox.innerHTML = `
-    <img onclick="changeInputType('${inputID}', '${spanID}')" src="/assets/img/visibility_off.svg" alt="open-eye">`;
+    <img onclick="changeInputType('${inputID}', '${spanID}')" src="/join/assets/img/visibility_off.svg" alt="open-eye">`;
   }
 }
 
@@ -138,7 +138,7 @@ function changeInputType(inputID, spanID) {
  */
 async function logInAsGuest() {
   await setNoCurrentUser();
-  window.location.href = '/src/features/summary/summary.html';
+  window.location.href = '/join/src/features/summary/summary.html';
 }
 
 /**
@@ -289,7 +289,7 @@ function comparePasswords(newName, newEmail, newPassword, checkNewPassword) {
  */
 function sendToPrivacyPolicy() {
   let noMember = true;
-  window.open(`/src/features/privacy/privacy.html?userId=${noMember}`, '_blank');
+  window.open(`/join/src/features/privacy/privacy.html?userId=${noMember}`, '_blank');
 }
 
 /**
@@ -297,7 +297,7 @@ function sendToPrivacyPolicy() {
  */
 function sendTolegalNotice() {
   let noMember = true;
-  window.open(`/src/features/legal/legal.html?userId=${noMember}`, '_blank');
+  window.open(`/join/src/features/legal/legal.html?userId=${noMember}`, '_blank');
 }
 
 /**
@@ -314,7 +314,7 @@ function postNewAccount(newName, newEmail, newPassword) {
   });
   renderSuccessfully();
   setTimeout(() => {
-    window.location.href = '/index.html';
+    window.location.href = '/join/index.html';
   }, 2000);
 }
 
@@ -339,10 +339,10 @@ function renderWrongPassword() {
 
 function renderSignUpHTML(){
   return document.getElementById('sign-up').innerHTML = `
-  <img class="static-logo" src="/assets/img/join-icon.svg" alt="">
+  <img class="static-logo" src="/join/assets/img/join-icon.svg" alt="">
   <div class="log-in-container">
     <div class="sign-in-title-container">
-      <img onclick="BackToLogIn()" class="sign-up-arrow" src="/assets/img/arrow-left-line.svg" alt="">
+      <img onclick="BackToLogIn()" class="sign-up-arrow" src="/join/assets/img/arrow-left-line.svg" alt="">
       <h2>Sign up</h2>
     </div>
     <div class="border-bottom-log-in"></div>

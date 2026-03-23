@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Renders the information of a task in the task card.
  * @param {string} idnumber - The ID of the task.
  */
@@ -121,7 +121,7 @@ function openCard(id) {
   let background = document.getElementById("background-grey");
   background.classList.remove("d-none");
 
-  body.innerHTML += `<iframe class="card-info" id="card-infos" src="/src/features/board/board-card.html"></iframe>`;
+  body.innerHTML += `<iframe class="card-info" id="card-infos" src="/join/src/features/board/board-card.html"></iframe>`;
   let iframe = document.getElementById("card-infos");
   iframe.onload = function () {
     renderTaskCardInfos(id);
@@ -155,7 +155,7 @@ function setSubtasks() {
 function editTask() {
   let card = document.getElementById("card-infos");
   card.id = "edit-card";
-  card.src = "/src/features/board/board-card-edit.html";
+  card.src = "/join/src/features/board/board-card-edit.html";
 }
 
 /**
@@ -226,7 +226,7 @@ function subtaskChecked(i, alltask) {
 window.onclick = function (event) {
   let allDots = document.getElementsByClassName("dots");
   for (let x = 0; x < allDots.length; x++) {
-    allDots[x].src = "/assets/img/3dots.svg";
+    allDots[x].src = "/join/assets/img/3dots.svg";
   }
   if (!event.target.matches(".dots")) {
     let dropdowns = document.getElementsByClassName("dropdown-content");
@@ -248,9 +248,9 @@ function openAddTask(section) {
     let body = document.getElementById("body");
     let background = document.getElementById("background-grey");
     background.classList.remove("d-none");
-    body.innerHTML += `<iframe class="add-task-card" name="${section}" id="whole-addtask-card" src="/src/features/add-task/add-task-modal.html"></iframe>`;
+    body.innerHTML += `<iframe class="add-task-card" name="${section}" id="whole-addtask-card" src="/join/src/features/add-task/add-task-modal.html"></iframe>`;
   } else {
-    window.location.href = "/src/features/add-task/add-task.html";
+    window.location.href = "/join/src/features/add-task/add-task.html";
   }
 }
 
