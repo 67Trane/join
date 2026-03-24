@@ -11,7 +11,7 @@ Eine Kanban-basierte Aufgabenverwaltungs-App, entwickelt mit reinem HTML, CSS un
 
 ---
 
-## Screenshots
+## Screenshot
 
 ![Board](https://mehmet-deliaci.net/join/assets/screenshots/join.png)
 
